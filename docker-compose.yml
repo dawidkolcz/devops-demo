@@ -1,0 +1,24 @@
+services:
+
+  database:
+    build: ./database/
+    networks: 
+      - "devops-demo"
+
+  backend:
+    build: ./spring-backend/
+    networks: 
+      - "devops-demo"
+    depends_on:
+      - "database"
+
+  frontend:
+    build: ./typescript-frontend/
+    networks: 
+      - "devops-demo"
+    ports:
+      - "8080:80"
+  
+networks:
+  devops-demo:
+    name: "devops-demo"

@@ -10,13 +10,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
+/**
+ *
+ * @author dawid kolcz
+ */
+
 @Entity(name = "books")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String title;
     Boolean available;

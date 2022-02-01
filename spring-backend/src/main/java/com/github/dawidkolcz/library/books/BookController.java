@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://proxy")
 @RestController
 public class BookController {
     private final BookRepository bookRepository;

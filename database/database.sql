@@ -23,10 +23,10 @@ SET default_table_access_method = heap;
 --
 -- Name: books; Type: TABLE; Schema: public; Owner: postgres
 --
-CREATE DATABASE backend;
+CREATE DATABASE public;
 
 CREATE TABLE public.books (
-    id integer NOT NULL,
+    id serial, 
     title character varying(40),
     available boolean
 );
@@ -38,12 +38,12 @@ ALTER TABLE public.books OWNER TO postgres;
 -- Data for Name: books; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.books (id, title, available) FROM stdin;
-1	Book 1	t
-2	Book 2	t
-3	Book 3	t
-4	Book 4	t
-5	Book 5	t
+COPY public.books (title, available) FROM stdin;
+Book 1	t
+Book 2	t
+Book 3	t
+Book 4	t
+Book 5	t
 \.
 
 

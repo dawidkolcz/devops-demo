@@ -9,6 +9,6 @@ FROM openjdk:17-alpine
 COPY --from=build target/*.jar backend.jar
 EXPOSE 8081
 ENTRYPOINT ["java","-jar","backend.jar", \
-  "--spring.datasource.url=jdbc:postgresql://database:5432/backend", \
+  "--spring.datasource.url=jdbc:postgresql://database:5432/postgres", \
   "--spring.datasource.username=postgres", \
   "--spring.datasource.password=postgres"]
