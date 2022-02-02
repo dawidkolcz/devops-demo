@@ -8,15 +8,17 @@ function START_DEMO_USING_DOCKER(){
   ./spring-backend/build-docker.sh 
   ./spring-backend/start-docker.sh
   echo "Building and running typescript-frontend..."
+  ./typescript-frontend/build-docker.sh
+  ./typescript-frontend/start-docker.sh
 }
 
 function START_DEMO_USING_DOCKER_COMPOSE(){
   CHECK_FOR_DOCKER_COMPOSE
-  docker-compose up
-  echo ""
+  ./start-docker-compose.sh
 }
 
 function START_DEMO_USING_JENKINS(){
+  echo "Building and runnign jenkins..."
   ./jenkins/build-docker.sh
   ./jenkins/start-docker.sh
 }
@@ -54,15 +56,15 @@ until [[ $CHOICE =~ [123] ]]; do
   case $CHOICE in
   1)
     echo "Starting demo using jenkins..."
-    # START_DEMO_USING_JENKINS
+    START_DEMO_USING_JENKINS
     ;;
   2)
     echo "Starting demo using docker-compose..."
-   # START_DEMO_USING_DOCKER_COMPOSE
+   START_DEMO_USING_DOCKER_COMPOSE
     ;;
   3)
     echo "Starting demo using docker..."
-    # START_DEMO_USING_DOCKER
+    START_DEMO_USING_DOCKER
     ;;
   *)
     echo "Only 1,2 or 3 is a valid choice, ctr+c to quit."

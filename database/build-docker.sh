@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# docker build --tag devops-demo:database .
 if [[ $PWD == *"database" ]]; then
   DIRECTORY="$PWD"
 else
@@ -8,4 +7,3 @@ else
 fi
 
 docker build --tag devops-demo:database $DIRECTORY
-
