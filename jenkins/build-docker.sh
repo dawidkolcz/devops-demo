@@ -5,4 +5,4 @@ else
   DIRECTORY="$PWD/jenkins/"
 fi
 
-DOCKER_BUILDKIT=1 docker build --tag devops-demo:jenkins $DIRECTORY
+docker build --tag devops-demo:jenkins $DIRECTORY

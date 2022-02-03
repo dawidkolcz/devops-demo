@@ -1,0 +1,25 @@
+:author: Dawid Kołcz
+:toc:
+
+= Devops demo
+
+Simple devops demo showing usage of docker, and few services.
+
+== Requirements
+
+- Linux - as long as there is bash it should work. You can run it on Windows too, but it's not tested.
+- Docker - is a must, get it https://docs.docker.com/get-docker/[here].
+- Docker compose - optional, but can be used to easily start demo. Get one https://docs.docker.com/compose/install/[here].
+
+== What's inside
+
+- Database - PostgresSQL database, very simple 5 items.
+- Spring backend - just one REST, only get all works as demo.
+- Typescript frontend - used to fetch data from backend. It is served via nginx.
+- Jenkins - to show CI/CD
+
+== How to start
+
+If you are running Linux, you can start `./start-demo.sh` and choose your way of running.
+Otherwise, you can use docker-compose or just docker to run it.
+All modules have their respective script to build and run docker images.
