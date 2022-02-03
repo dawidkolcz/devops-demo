@@ -13,8 +13,5 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-c
       -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 
-RUN groupadd -g 997 docker
-RUN usermod -aG docker jenkins
-
 USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean:1.25.2 docker-workflow:1.28 git:4.10.3"
