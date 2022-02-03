@@ -12,7 +12,7 @@ node {
       }
     }
   }
-}
+
   stage('Deploy'){
     sh "./start-docker-compose.sh"
   }

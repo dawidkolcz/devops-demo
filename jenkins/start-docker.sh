@@ -2,7 +2,7 @@
 
 REPO_DIR=$(pwd|sed 's/\/jenkins//')
 docker run --name jenkins --network devops-demo --detach --rm \
-  --publish 8080:8080 --publish 50000:50000 \
+  --publish 9090:8080 --publish 50000:50000 \
   --privileged \
   -v /var/run/docker.sock:/var/run/docker.sock \
   --volume $REPO_DIR:/repo \
