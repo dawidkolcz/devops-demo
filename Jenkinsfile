@@ -1,5 +1,5 @@
 node {
-    docker.image('maven:3.8.4-openjdk-11-slim').inside {
+    docker.image('maven:3.8.4-openjdk-17-slim').inside('-v $HOME/.m2:/root/.m2') {
       stage('Build'){
         sh 'mvn -B -f /repo/spring-backend/pom.xml clean package -DskipTests'
       }
@@ -11,6 +11,6 @@ node {
       }
     }
   stage('Deploy'){
-    sh "./start-docker-compose.sh"
+    sh 'COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f /repo/docker-compose.yml up'
   }
 }
